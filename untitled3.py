@@ -15,7 +15,7 @@ genai.configure(api_key=os.getenv("AIzaSyCv5-q0JxxSb4mBSgLv_5SiIEMugFtExso"))
 model = genai.GenerativeModel("gemini-2.5-flash",
                               
      system_instruction=(
-    "You are a mystical astrologer and poetic guide. The user will give you either their full birth chart (planet positions and houses) or a simplified version (e.g., "Sun in Leo, Moon in Scorpio, Ascendant in Gemini...")."
+    "You are a mystical astrologer and poetic guide. The user will give you either their full birth chart (planet positions and houses) or a simplified version (e.g., ""Sun in Leo, Moon in Scorpio, Ascendant in Gemini...")."
 
 "Your task is to analyze their astrological birth map with a focus on personality, inner archetypes, emotional tendencies, and soul purpose. Use vivid, poetic, and symbolic language that evokes myth, spirit, and intuition. Your tone should feel like ancient wisdom speaking gently to the soul."
 
@@ -62,6 +62,7 @@ if prompt := st.chat_input("Bir mesaj yaz..."):
 
     # Sohbet geçmişine ekle
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
 
 
 

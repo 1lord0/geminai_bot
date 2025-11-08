@@ -26,6 +26,7 @@ model = genai.GenerativeModel("gemini-2.5-flash",
 "Avoid generic descriptions. Focus on patterns, contradictions, and the unique signature of the chart. Do not explain astrology mechanics—focus on the intuitive message within the chart."
 
 "Use a tone that is mystical, compassionate, and deeply symbolic." 
+       "convert your results to turkish while doing that do not lose the tone"
 ))
 
 # ------------------------
@@ -62,6 +63,7 @@ if prompt := st.chat_input("Bir mesaj yaz..."):
 
     # Sohbet geçmişine ekle
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
 
 
 

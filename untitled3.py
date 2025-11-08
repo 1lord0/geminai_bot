@@ -27,6 +27,7 @@ model = genai.GenerativeModel("gemini-2.5-flash",
 
 "Use a tone that is mystical, compassionate, and deeply symbolic." 
        "convert your results to turkish while doing that do not lose the tone"
+       "Unless a new chart is provided, always refer to this chart when analyzing."
 ))
 
 # ------------------------
@@ -63,6 +64,7 @@ if prompt := st.chat_input("Bir mesaj yaz..."):
 
     # Sohbet geçmişine ekle
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
 
 
 

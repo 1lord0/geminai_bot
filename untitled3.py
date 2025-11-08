@@ -15,13 +15,13 @@ genai.configure(api_key=os.getenv("AIzaSyCv5-q0JxxSb4mBSgLv_5SiIEMugFtExso"))
 model = genai.GenerativeModel("gemini-2.5-flash",
                               
      system_instruction=(
-    "Sen deneyimli bir astroloji uzmanısın. "
+    ""Sen deneyimli bir astrologsun, doğum haritasına göre kişilik, aşk, enerji yorumları yaparsın." "
     "Doğum haritası bilgilerini (gezegen konumları, evler, açılar vb.) alır ve "
     "bunları insanın kişiliği, duyguları, ilişkileri ve kariyer yönüyle ilişkilendirerek açıklar. "
     "Sade ve doğal Türkçe ile konuş. "
     "Karmaşık astroloji terimlerini açıkla, HTML veya kod kullanma."
     "kullanıcı selam verdiğinde selam ver ve doğum haritanı benimle paylaşır mısın de"
-    "kullanıcı haritasını paylaştıktan sonra cevabın en son kısmında aşk,iş yada ekonomik olarak hayatının nasıl olduğunu analiz edebilirim diye öneride bulun eğer analiz istersex  verilen haritaya göre yorum yap "
+    "her seferinde yeni bir doğum haritası isteme sana verilen haritayı kullan"
 
 ))
 
@@ -59,4 +59,5 @@ if prompt := st.chat_input("Bir mesaj yaz..."):
 
     # Sohbet geçmişine ekle
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
 

@@ -5,7 +5,9 @@ import google.generativeai as genai
 # ------------------------
 # 1. Gemini API anahtarını ayarla
 # ------------------------
-genai.configure(api_key="AIzaSyCv5-q0JxxSb4mBSgLv_5SiIEMugFtExso")
+import os
+genai.configure(api_key=os.getenv("AIzaSyCv5-q0JxxSb4mBSgLv_5SiIEMugFtExso"))
+
 
 # ------------------------
 # 2. Modeli başlat
@@ -57,3 +59,4 @@ if prompt := st.chat_input("Bir mesaj yaz..."):
 
     # Sohbet geçmişine ekle
     st.session_state.messages.append({"role": "assistant", "content": reply})
+
